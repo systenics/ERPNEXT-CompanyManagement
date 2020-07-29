@@ -1,8 +1,84 @@
-// Copyright (c) 2020, Systenics and contributors
-// For license information, please see license.txt
+cur_frm.add_fetch('employee','employee_name','full_name');
 
-frappe.ui.form.on('Employee Variable', {
-	// refresh: function(frm) {
-
-	// }
+frappe.ui.form.on("Employee Variable", {
+   	validate: function(frm) {
+		if (frm.doc.cycle_start >= frm.doc.cycle_end ){
+			frappe.msgprint(__('Cycle End Date cannot be before the Cycle Start Date'));
+			frappe.validated = false; 
+		}
+	}
 });
+
+frappe.ui.form.on("Employee Variable", "cycle_start",
+     function(frm) {
+        var d = new Date(frm.doc.cycle_start);
+        d.setFullYear(d.getFullYear() + 1);
+        d.setDate(d.getDate()-1);
+	frm.set_value('cycle_end', d);
+	console.log('Cycle End Date:' + d);
+});
+
+frappe.ui.form.on("Employee Variable", {
+  promised_monthly: function(frm) {
+    updatePromisedTotal(frm);
+  },
+  promised_fixed_variable: function(frm) {
+   updatePromisedTotal(frm) ;
+ },
+  promised_variable: function(frm) {
+   updatePromisedTotal(frm) ;
+ },
+  actual_fixed_variable: function(frm){
+   updateActualPaidTotal(frm)
+ },
+  actual_variable: function(frm){
+   updateActualPaidTotal(frm);
+   //updateActualPercentage(frm);
+ },
+  epfo_paid: function(frm){
+   updateActualPaidTotal(frm);
+ },
+  holidays: function(frm){
+   updateActualPaidTotal(frm);
+ },
+  gratuity: function(frm){
+   updateActualPaidTotal(frm);
+ },
+ actual_variable_percentage: function(frm){
+   updateActualVariable(frm);
+ },
+ holiday_days: function(frm) {
+   updateHoliday(frm);
+ }
+});
+
+function updatePromisedTotal(frm) {
+  var total = (frm.doc.promised_monthly*12) + frm.doc.promised_fixed_variable + frm.doc.promised_variable;
+  frm.set_value('promised_total', total);
+  console.log('Total Promised:' + total);
+}
+
+function updateActualPaidTotal(frm) {
+  var actualTotal = frm.doc.actual_fixed_variable + frm.doc.actual_variable + frm.doc.epfo_paid + frm.doc.holidays + frm.doc.gratuity ;
+  frm.set_value('total_actual_paid', actualTotal );
+  console.log('Total Paid:' + actualTotal );
+}
+
+function updateActualVariable(frm){
+  var per = (frm.doc.promised_variable * frm.doc.actual_variable_percentage)/100 ;
+  frm.set_value('actual_variable', per );
+}
+
+function  updateActualPercentage(frm) {
+  var per = (frm.doc.promised_variable*100)/frm.doc.actual_variable;
+  frm.set_value('actual_variable_percentage',per);
+}
+
+function  updateHoliday(frm) {
+  if(frm.doc.holiday_days != 0)
+  {
+    var payout = (frm.doc.promised_monthly/30)*frm.doc.holiday_days;
+    frm.set_value('holidays', payout);
+  }
+  
+}

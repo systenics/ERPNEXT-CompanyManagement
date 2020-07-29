@@ -12,21 +12,24 @@
   "cycle_end",
   "promised_salary_and_bonus_section",
   "promised_monthly",
-  "promised_total",
-  "review_comments",
-  "column_break_9",
   "promised_fixed_variable",
-  "column_break_11",
   "promised_variable",
+  "promised_total",
+  "column_break_9",
+  "commitment_given",
+  "promise_comments",
   "actual_paid_bonus_section",
-  "review_date",
-  "column_break_15",
   "actual_fixed_variable",
+  "actual_variable_percentage",
   "actual_variable",
   "epfo_paid",
+  "holiday_days",
   "holidays",
   "gratuity",
-  "total_actual_paid"
+  "total_actual_paid",
+  "column_break_15",
+  "review_date",
+  "review_comments"
  ],
  "fields": [
   {
@@ -104,10 +107,6 @@
    "label": "Promised Fixed Variable"
   },
   {
-   "fieldname": "column_break_11",
-   "fieldtype": "Column Break"
-  },
-  {
    "allow_in_quick_entry": 1,
    "default": "0.00",
    "fieldname": "promised_variable",
@@ -135,6 +134,9 @@
    "label": "Actual Fixed Variable"
   },
   {
+   "default": "0.00",
+   "fetch_from": "promised_variable",
+   "fetch_if_empty": 1,
    "fieldname": "actual_variable",
    "fieldtype": "Currency",
    "label": "Actual Variable"
@@ -168,9 +170,33 @@
    "fieldname": "review_comments",
    "fieldtype": "Small Text",
    "label": "Review Comments"
+  },
+  {
+   "default": "0",
+   "fieldname": "actual_variable_percentage",
+   "fieldtype": "Percent",
+   "label": "Actual Variable Percentage"
+  },
+  {
+   "default": "0",
+   "description": "Use + for Pay Out and - for cut extra",
+   "fieldname": "holiday_days",
+   "fieldtype": "Float",
+   "label": "Holiday Days"
+  },
+  {
+   "fieldname": "commitment_given",
+   "fieldtype": "Select",
+   "label": "Commitment Given",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "promise_comments",
+   "fieldtype": "Small Text",
+   "label": "Promise Comments"
   }
  ],
- "modified": "2020-07-29 13:05:02.287105",
+ "modified": "2020-07-29 19:31:36.247512",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",
