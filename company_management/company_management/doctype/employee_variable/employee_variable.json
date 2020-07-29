@@ -1,0 +1,198 @@
+{
+ "allow_events_in_timeline": 1,
+ "creation": "2020-07-29 13:02:21.305554",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "full_name",
+  "column_break_3",
+  "cycle_start",
+  "cycle_end",
+  "promised_salary_and_bonus_section",
+  "promised_monthly",
+  "promised_total",
+  "review_comments",
+  "column_break_9",
+  "promised_fixed_variable",
+  "column_break_11",
+  "promised_variable",
+  "actual_paid_bonus_section",
+  "review_date",
+  "column_break_15",
+  "actual_fixed_variable",
+  "actual_variable",
+  "epfo_paid",
+  "holidays",
+  "gratuity",
+  "total_actual_paid"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Employee ",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Read Only",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "cycle_start",
+   "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cycle Start",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "cycle_end",
+   "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cycle End",
+   "reqd": 1
+  },
+  {
+   "fieldname": "promised_salary_and_bonus_section",
+   "fieldtype": "Section Break",
+   "label": "Promised Salary and Bonus"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0.00",
+   "fieldname": "promised_monthly",
+   "fieldtype": "Currency",
+   "label": "Promised Monthly"
+  },
+  {
+   "bold": 1,
+   "fieldname": "promised_total",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Promised Total"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0.00",
+   "fieldname": "promised_fixed_variable",
+   "fieldtype": "Currency",
+   "label": "Promised Fixed Variable"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0.00",
+   "fieldname": "promised_variable",
+   "fieldtype": "Currency",
+   "label": "Promised Variable"
+  },
+  {
+   "fieldname": "actual_paid_bonus_section",
+   "fieldtype": "Section Break",
+   "label": "Actual Paid Bonus"
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "label": "Review Date"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "actual_fixed_variable",
+   "fieldtype": "Currency",
+   "label": "Actual Fixed Variable"
+  },
+  {
+   "fieldname": "actual_variable",
+   "fieldtype": "Currency",
+   "label": "Actual Variable"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "epfo_paid",
+   "fieldtype": "Currency",
+   "label": "EPFO Paid"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "holidays",
+   "fieldtype": "Currency",
+   "label": "Holidays "
+  },
+  {
+   "default": "0.00",
+   "fieldname": "gratuity",
+   "fieldtype": "Currency",
+   "label": "Gratuity"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_actual_paid",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Total Actual Paid"
+  },
+  {
+   "fieldname": "review_comments",
+   "fieldtype": "Small Text",
+   "label": "Review Comments"
+  }
+ ],
+ "modified": "2020-07-29 13:05:02.287105",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "Employee Variable",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "full_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "full_name",
+ "track_changes": 1
+}
