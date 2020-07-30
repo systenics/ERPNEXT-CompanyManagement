@@ -91,7 +91,7 @@
   {
    "bold": 1,
    "fieldname": "promised_total",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Promised Total"
   },
@@ -162,7 +162,7 @@
   {
    "bold": 1,
    "fieldname": "total_actual_paid",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Actual Paid"
   },
@@ -196,7 +196,7 @@
    "label": "Promise Comments"
   }
  ],
- "modified": "2020-07-29 19:31:36.247512",
+ "modified": "2020-07-30 12:51:23.210631",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",
