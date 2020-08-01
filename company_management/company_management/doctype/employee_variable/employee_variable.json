@@ -15,6 +15,7 @@
   "promised_fixed_variable",
   "promised_variable",
   "promised_total",
+  "increment",
   "column_break_9",
   "commitment_given",
   "promise_comments",
@@ -86,14 +87,16 @@
    "default": "0.00",
    "fieldname": "promised_monthly",
    "fieldtype": "Currency",
-   "label": "Promised Monthly"
+   "label": "Promised Monthly",
+   "precision": "2"
   },
   {
    "bold": 1,
    "fieldname": "promised_total",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Promised Total"
+   "label": "Promised Total",
+   "precision": "2"
   },
   {
    "fieldname": "column_break_9",
@@ -104,14 +107,16 @@
    "default": "0.00",
    "fieldname": "promised_fixed_variable",
    "fieldtype": "Currency",
-   "label": "Promised Fixed Variable"
+   "label": "Promised Fixed Variable",
+   "precision": "2"
   },
   {
    "allow_in_quick_entry": 1,
    "default": "0.00",
    "fieldname": "promised_variable",
    "fieldtype": "Currency",
-   "label": "Promised Variable"
+   "label": "Promised Variable",
+   "precision": "2"
   },
   {
    "fieldname": "actual_paid_bonus_section",
@@ -131,7 +136,8 @@
    "default": "0.00",
    "fieldname": "actual_fixed_variable",
    "fieldtype": "Currency",
-   "label": "Actual Fixed Variable"
+   "label": "Actual Fixed Variable",
+   "precision": "2"
   },
   {
    "default": "0.00",
@@ -139,7 +145,8 @@
    "fetch_if_empty": 1,
    "fieldname": "actual_variable",
    "fieldtype": "Currency",
-   "label": "Actual Variable"
+   "label": "Actual Variable",
+   "precision": "2"
   },
   {
    "default": "0.00",
@@ -151,7 +158,8 @@
    "default": "0.00",
    "fieldname": "holidays",
    "fieldtype": "Currency",
-   "label": "Holidays "
+   "label": "Holidays ",
+   "precision": "2"
   },
   {
    "default": "0.00",
@@ -164,7 +172,8 @@
    "fieldname": "total_actual_paid",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Actual Paid"
+   "label": "Total Actual Paid",
+   "precision": "2"
   },
   {
    "fieldname": "review_comments",
@@ -175,14 +184,16 @@
    "default": "0",
    "fieldname": "actual_variable_percentage",
    "fieldtype": "Percent",
-   "label": "Actual Variable Percentage"
+   "label": "Actual Variable Percentage",
+   "precision": "2"
   },
   {
    "default": "0",
    "description": "Use + for Pay Out and - for cut extra",
    "fieldname": "holiday_days",
    "fieldtype": "Float",
-   "label": "Holiday Days"
+   "label": "Holiday Days",
+   "precision": "2"
   },
   {
    "fieldname": "commitment_given",
@@ -194,9 +205,15 @@
    "fieldname": "promise_comments",
    "fieldtype": "Small Text",
    "label": "Promise Comments"
+  },
+  {
+   "fieldname": "increment",
+   "fieldtype": "Percent",
+   "label": "Increment %",
+   "precision": "2"
   }
  ],
- "modified": "2020-07-30 12:51:23.210631",
+ "modified": "2020-08-01 12:09:53.341625",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",

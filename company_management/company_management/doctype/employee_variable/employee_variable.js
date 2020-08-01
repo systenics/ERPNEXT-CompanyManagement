@@ -53,15 +53,28 @@ frappe.ui.form.on("Employee Variable", {
 });
 
 function updatePromisedTotal(frm) {
-  var total = (frm.doc.promised_monthly*12) + frm.doc.promised_fixed_variable + frm.doc.promised_variable;
-  frm.set_value('promised_total', total);
-  console.log('Total Promised:' + total);
+  var total = (frm.doc.promised_monthly * 12) + frm.doc.promised_fixed_variable + frm.doc.promised_variable;
+  
+  if (total > 0) {
+    frm.set_value('promised_total', total);
+    console.log('Total Promised:' + total);
+    frappe.db.get_value('Employee Variable', { employee: frm.doc.employee }, 'promised_total')
+      .then(r => {
+        let values = r.message;
+        console.log('Previous CTC' + values.promised_total);
+        if (values.promised_total > 0) {
+          let increment = (frm.doc.promised_total * 100) / values.promised_total;
+          frm.set_value('increment', increment);
+        }
+      })
+  }
 }
 
 function updateActualPaidTotal(frm) {
   var actualTotal = frm.doc.actual_fixed_variable + frm.doc.actual_variable + frm.doc.epfo_paid + frm.doc.holidays + frm.doc.gratuity ;
   frm.set_value('total_actual_paid', actualTotal );
-  console.log('Total Paid:' + actualTotal );
+  console.log('Total Paid:' + actualTotal);
+  
 }
 
 function updateActualVariable(frm){
