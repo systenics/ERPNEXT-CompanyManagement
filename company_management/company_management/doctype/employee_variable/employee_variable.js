@@ -58,13 +58,18 @@ function updatePromisedTotal(frm) {
   if (total > 0) {
     frm.set_value('promised_total', total);
     console.log('Total Promised:' + total);
-    frappe.db.get_value('Employee Variable', { employee: frm.doc.employee }, 'promised_total')
+    frappe.db.get_value('Employee Variable', { employee: frm.doc.employee }, ['name','promised_total'])
       .then(r => {
+        
         let values = r.message;
-        console.log('Previous CTC' + values.promised_total);
-        if (values.promised_total > 0) {
-          let increment = (frm.doc.promised_total * 100) / values.promised_total;
-          frm.set_value('increment', increment);
+        if (values.name != frm.doc.name) {
+         
+          if (values.promised_total > 0) {
+            console.log('Previous CTC' + values.promised_total);
+            let increment_amount = frm.doc.promised_total - values.promised_total;
+            let increment = (increment_amount / values.promised_total) * 100;
+            frm.set_value('increment', increment);
+          }
         }
       })
   }

@@ -168,6 +168,7 @@
    "label": "Gratuity"
   },
   {
+   "allow_in_quick_entry": 1,
    "bold": 1,
    "fieldname": "total_actual_paid",
    "fieldtype": "Currency",
@@ -209,11 +210,12 @@
   {
    "fieldname": "increment",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Increment %",
    "precision": "2"
   }
  ],
- "modified": "2020-08-01 12:09:53.341625",
+ "modified": "2020-08-01 15:30:09.530481",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",
