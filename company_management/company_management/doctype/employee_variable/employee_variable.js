@@ -14,11 +14,15 @@ frappe.ui.form.on("Employee Variable", "cycle_start",
         var d = new Date(frm.doc.cycle_start);
         d.setFullYear(d.getFullYear() + 1);
         d.setDate(d.getDate()-1);
-	frm.set_value('cycle_end', d);
+       frm.set_value('cycle_end', d);
+       frm.set_value('review_date', d);
 	console.log('Cycle End Date:' + d);
 });
 
 frappe.ui.form.on("Employee Variable", {
+  full_name: function (frm) {
+    updateCycle(frm);
+  },
   promised_monthly: function(frm) {
     updatePromisedTotal(frm);
   },
@@ -52,6 +56,25 @@ frappe.ui.form.on("Employee Variable", {
  }
 });
 
+function updateCycle(frm) {
+  if (frm.is_new())
+  {
+    frappe.db.get_value('Employee Variable', { employee: frm.doc.employee }, ['name', 'cycle_end'])
+      .then(r => {
+
+        let values = r.message;
+        if (values.name != frm.doc.name) {
+          var d = new Date(values.cycle_end);
+          d.setDate(d.getDate() + 1);
+          frm.set_value('cycle_start', d);
+          
+        }
+      })
+    }
+ 
+
+}
+
 function updatePromisedTotal(frm) {
   var total = (frm.doc.promised_monthly * 12) + frm.doc.promised_fixed_variable + frm.doc.promised_variable;
   
@@ -76,7 +99,7 @@ function updatePromisedTotal(frm) {
 }
 
 function updateActualPaidTotal(frm) {
-  var actualTotal = frm.doc.actual_fixed_variable + frm.doc.actual_variable + frm.doc.epfo_paid + frm.doc.holidays + frm.doc.gratuity ;
+  var actualTotal = frm.doc.actual_fixed_variable + frm.doc.actual_variable - frm.doc.epfo_paid + frm.doc.holidays - frm.doc.gratuity ;
   frm.set_value('total_actual_paid', actualTotal );
   console.log('Total Paid:' + actualTotal);
   
