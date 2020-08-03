@@ -63,11 +63,13 @@ function updateCycle(frm) {
       .then(r => {
 
         let values = r.message;
-        if (values.name != frm.doc.name) {
-          var d = new Date(values.cycle_end);
-          d.setDate(d.getDate() + 1);
-          frm.set_value('cycle_start', d);
+        if (values !== undefined) {
+          if (values.name != frm.doc.name) {
+            var d = new Date(values.cycle_end);
+            d.setDate(d.getDate() + 1);
+            frm.set_value('cycle_start', d);
           
+          }
         }
       })
     }
