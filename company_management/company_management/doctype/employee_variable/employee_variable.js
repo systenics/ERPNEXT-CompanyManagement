@@ -87,13 +87,15 @@ function updatePromisedTotal(frm) {
       .then(r => {
         
         let values = r.message;
-        if (values.name != frm.doc.name) {
+        if (values !== undefined) {
+          if (values.name != frm.doc.name) {
          
-          if (values.promised_total > 0) {
-            console.log('Previous CTC' + values.promised_total);
-            let increment_amount = frm.doc.promised_total - values.promised_total;
-            let increment = (increment_amount / values.promised_total) * 100;
-            frm.set_value('increment', increment);
+            if (values.promised_total > 0) {
+              console.log('Previous CTC' + values.promised_total);
+              let increment_amount = frm.doc.promised_total - values.promised_total;
+              let increment = (increment_amount / values.promised_total) * 100;
+              frm.set_value('increment', increment);
+            }
           }
         }
       })
