@@ -1,0 +1,59 @@
+{
+ "creation": "2020-08-10 16:13:11.306435",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "goal_name",
+  "type",
+  "percentage",
+  "rating_max"
+ ],
+ "fields": [
+  {
+   "fieldname": "goal_name",
+   "fieldtype": "Data",
+   "label": "Goal Name"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Monthly\nYearly"
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "label": "Percentage",
+   "precision": "2"
+  },
+  {
+   "fieldname": "rating_max",
+   "fieldtype": "Int",
+   "label": "Rating Max"
+  }
+ ],
+ "modified": "2020-08-10 16:43:19.962771",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "Goal Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "goal_name",
+ "track_changes": 1
+}

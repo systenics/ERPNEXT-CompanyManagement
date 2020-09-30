@@ -12,6 +12,12 @@ def get_data():
               "name": "Employee Variable",
               "label": _("Employee Variable"),
               "description": _("Manage Employee Variable and Payout"),
+            },
+             {
+              "type": "doctype",
+              "name": "Goal Template",
+              "label": _("Goal Template"),
+              "description": _("Goal Template"),
             }
           ]
       }

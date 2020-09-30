@@ -215,7 +215,7 @@
    "precision": "2"
   }
  ],
- "modified": "2020-08-01 15:30:09.530481",
+ "modified": "2020-08-10 15:28:12.533629",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",
@@ -230,6 +230,18 @@
    "read": 1,
    "report": 1,
    "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Company Manager",
    "share": 1,
    "write": 1
   }
