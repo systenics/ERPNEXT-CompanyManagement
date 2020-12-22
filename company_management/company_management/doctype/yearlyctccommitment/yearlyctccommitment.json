@@ -1,0 +1,176 @@
+{
+ "creation": "2020-11-30 17:25:20.492496",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cycle_start",
+  "cycle_end",
+  "promised_compensation_section",
+  "promised_monthly",
+  "promised_fixed_bonus",
+  "promised_variable",
+  "promised_total",
+  "increment_",
+  "column_break_9",
+  "yearly_commitment_given",
+  "promise_comments",
+  "actual_compensation_section",
+  "actual_monthly",
+  "actual_fixed_bonus",
+  "actual_variable_bonus_",
+  "actual_variable_bonus",
+  "epfo_paid",
+  "holiday_days",
+  "holidays",
+  "gratuity",
+  "total_actual",
+  "column_break_22",
+  "review_date",
+  "review_comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "cycle_start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Cycle Start"
+  },
+  {
+   "fieldname": "cycle_end",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Cycle End"
+  },
+  {
+   "fieldname": "promised_compensation_section",
+   "fieldtype": "Section Break",
+   "label": "Promised Compensation"
+  },
+  {
+   "fieldname": "promised_monthly",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Promised Monthly"
+  },
+  {
+   "fieldname": "promised_fixed_bonus",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Promised Fixed Bonus"
+  },
+  {
+   "fieldname": "promised_variable",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Promised Variable "
+  },
+  {
+   "fieldname": "promised_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Promised Total"
+  },
+  {
+   "fieldname": "increment_",
+   "fieldtype": "Percent",
+   "label": "Increment %"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "yearly_commitment_given",
+   "fieldtype": "Select",
+   "label": "Yearly Commitment Given",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "promise_comments",
+   "fieldtype": "Small Text",
+   "label": "Promise Comments"
+  },
+  {
+   "fieldname": "actual_compensation_section",
+   "fieldtype": "Section Break",
+   "label": "Actual Compensation"
+  },
+  {
+   "fieldname": "actual_monthly",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Actual Monthly"
+  },
+  {
+   "fieldname": "actual_fixed_bonus",
+   "fieldtype": "Currency",
+   "label": "Actual Fixed Bonus"
+  },
+  {
+   "fieldname": "actual_variable_bonus_",
+   "fieldtype": "Percent",
+   "label": "Actual Variable Bonus %"
+  },
+  {
+   "fieldname": "actual_variable_bonus",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Actual Variable Bonus"
+  },
+  {
+   "fieldname": "epfo_paid",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "EPFO Paid"
+  },
+  {
+   "fieldname": "holiday_days",
+   "fieldtype": "Float",
+   "label": "Holiday Days"
+  },
+  {
+   "fieldname": "holidays",
+   "fieldtype": "Currency",
+   "label": "Holidays"
+  },
+  {
+   "fieldname": "gratuity",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gratuity"
+  },
+  {
+   "fieldname": "total_actual",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Actual"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "label": "Review Date"
+  },
+  {
+   "fieldname": "review_comments",
+   "fieldtype": "Small Text",
+   "label": "Review Comments"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-11-30 19:08:18.517388",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "YearlyCTCCommitment",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
