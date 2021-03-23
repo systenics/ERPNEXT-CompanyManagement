@@ -6,5 +6,5 @@ from __future__ import unicode_literals
 # import frappe
 import unittest
 
-class TestCompensationCommitments(unittest.TestCase):
+class TestCompensation(unittest.TestCase):
 	pass

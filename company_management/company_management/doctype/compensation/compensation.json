@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "creation": "2020-11-30 17:36:51.573546",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "full_name",
+  "current_cycle_start",
+  "current_cycle_end",
+  "column_break_5",
+  "current_ctc",
+  "current_variable",
+  "total_gratuity",
+  "compensation_section",
+  "commitments"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "search_index": 1
+  },
+  {
+   "fieldname": "commitments",
+   "fieldtype": "Table",
+   "label": "CTC",
+   "options": "YearlyCTC"
+  },
+  {
+   "fieldname": "current_cycle_start",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Current Cycle Start"
+  },
+  {
+   "fieldname": "current_cycle_end",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Current Cycle End"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_ctc",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Current CTC"
+  },
+  {
+   "fieldname": "current_variable",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Current Variable"
+  },
+  {
+   "fieldname": "total_gratuity",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Total Gratuity"
+  },
+  {
+   "fieldname": "compensation_section",
+   "fieldtype": "Section Break",
+   "label": "Compensation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-03-08 14:24:14.344414",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "Compensation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "full_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "full_name",
+ "track_changes": 1
+}
