@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "creation": "2020-11-30 17:25:20.492496",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,16 +9,15 @@
   "promised_compensation_section",
   "promised_monthly",
   "promised_fixed_bonus",
-  "promised_variable",
+  "promised_variable_bonus",
   "promised_total",
-  "increment_",
+  "increment_percent",
   "column_break_9",
   "yearly_commitment_given",
   "promise_comments",
   "actual_compensation_section",
-  "actual_monthly",
   "actual_fixed_bonus",
-  "actual_variable_bonus_",
+  "actual_variable_bonus_percent",
   "actual_variable_bonus",
   "epfo_paid",
   "holiday_days",
@@ -61,21 +61,10 @@
    "label": "Promised Fixed Bonus"
   },
   {
-   "fieldname": "promised_variable",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Promised Variable "
-  },
-  {
    "fieldname": "promised_total",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Promised Total"
-  },
-  {
-   "fieldname": "increment_",
-   "fieldtype": "Percent",
-   "label": "Increment %"
   },
   {
    "fieldname": "column_break_9",
@@ -98,20 +87,9 @@
    "label": "Actual Compensation"
   },
   {
-   "fieldname": "actual_monthly",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Actual Monthly"
-  },
-  {
    "fieldname": "actual_fixed_bonus",
    "fieldtype": "Currency",
    "label": "Actual Fixed Bonus"
-  },
-  {
-   "fieldname": "actual_variable_bonus_",
-   "fieldtype": "Percent",
-   "label": "Actual Variable Bonus %"
   },
   {
    "fieldname": "actual_variable_bonus",
@@ -160,10 +138,28 @@
    "fieldname": "review_comments",
    "fieldtype": "Small Text",
    "label": "Review Comments"
+  },
+  {
+   "fieldname": "promised_variable_bonus",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Promised Variable Bonus"
+  },
+  {
+   "fieldname": "increment_percent",
+   "fieldtype": "Percent",
+   "label": "Increment %"
+  },
+  {
+   "fieldname": "actual_variable_bonus_percent",
+   "fieldtype": "Percent",
+   "label": "Actual Variable Bonus %"
   }
  ],
+ "index_web_pages_for_search": 1,
  "istable": 1,
- "modified": "2020-11-30 19:08:18.517388",
+ "links": [],
+ "modified": "2021-03-23 19:17:04.556927",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "YearlyCTC",
