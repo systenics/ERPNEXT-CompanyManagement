@@ -57,6 +57,7 @@ frappe.ui.form.on("Compensation", "validate", function (frm) {
 		frm.set_value("current_cycle_end", latestCycle.cycle_end);
 		frm.set_value("current_variable",  latestCycle.promised_variable_bonus);
 		frm.set_value("current_ctc", latestCycle.promised_total);
+		frm.set_value("current_increment_precent", latestCycle.increment_percent);
 		frm.set_value("total_gratuity", totalGratuity);
 
 	}
