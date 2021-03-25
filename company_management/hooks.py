@@ -127,3 +127,7 @@ app_license = "MIT"
 # 	"Task": "company_management.task.get_dashboard_data"
 # }
 
+fixtures = [{"dt":"Property Setter", "filters": [["doc_type", "in", ("Compensation", "YearlyCTC")]]},
+       {"dt":"Custom Field", "filters": [["dt", "in", ("Compensation", "YearlyCTC")]]},
+       {"dt":"Custom DocPerm", "filters":[["parent","in", ("Compensation")]]}]
+

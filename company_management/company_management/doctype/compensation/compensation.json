@@ -10,8 +10,9 @@
   "current_cycle_start",
   "current_cycle_end",
   "column_break_5",
-  "current_ctc",
   "current_variable",
+  "current_increment_precent",
+  "current_ctc",
   "total_gratuity",
   "compensation_section",
   "commitments"
@@ -77,11 +78,16 @@
    "fieldname": "compensation_section",
    "fieldtype": "Section Break",
    "label": "Compensation"
+  },
+  {
+   "fieldname": "current_increment_precent",
+   "fieldtype": "Read Only",
+   "label": "Current Increment %"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-08 14:24:14.344414",
+ "modified": "2021-03-25 17:04:15.767655",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Compensation",

@@ -138,6 +138,9 @@ frappe.ui.form.on('YearlyCTC', {
 	holiday_days: function (doc, cdt, cdn) {
 		updateHoliday(doc, cdt, cdn);
 		updateActualPaidTotal(doc, cdt, cdn);
+	},
+	holidays: function (doc, cdt, cdn) {
+		updateHolidayDays(doc, cdt, cdn);
 	}
 });
 
@@ -237,4 +240,23 @@ function updateHoliday(doc, cdt, cdn) {
 
 }
 
+function updateHolidayDays(doc, cdt, cdn) {
+	var childfields = locals[cdt][cdn];
+	if (childfields.holiday_days == 0 && childfields.holidays != 0) {
+		var perday = (childfields.promised_monthly / 30);
 
+		
+		if (childfields.holidays < 0)
+		{
+			var absdays = Math.abs(childfields.holidays) / perday;
+			childfields.holiday_days = "-" + absdays;
+			
+		} else {
+			childfields.holiday_days = childfields.holidays / perday;
+		}
+		
+		cur_frm.refresh_field("commitments");
+		console.log('Holiday days: ' + childfields.holiday_days);
+	}
+
+}
