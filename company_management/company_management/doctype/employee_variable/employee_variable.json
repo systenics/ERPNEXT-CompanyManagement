@@ -1,5 +1,7 @@
 {
+ "actions": [],
  "allow_events_in_timeline": 1,
+ "allow_import": 1,
  "creation": "2020-07-29 13:02:21.305554",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -215,7 +217,9 @@
    "precision": "2"
   }
  ],
- "modified": "2020-08-10 15:28:12.533629",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-03-25 18:03:29.450366",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Employee Variable",

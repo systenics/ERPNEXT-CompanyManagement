@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "creation": "2020-11-30 17:36:51.573546",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -87,7 +88,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-25 17:04:15.767655",
+ "modified": "2021-03-25 18:05:58.455071",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Compensation",
