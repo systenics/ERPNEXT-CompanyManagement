@@ -24,6 +24,45 @@ frappe.ui.form.on("YearlyCTC", "validate", function (frm, cdt, cdn) {
 
 }); */
 
+frappe.ui.form.on("Compensation", "validate", function (frm) {
+
+	console.table(frm.doc);
+	var childforms = frm.doc.commitments;
+	console.log(childforms.length);
+	if (childforms.length > 0) {
+		var latestCycle = childforms[0];
+		var totalGratuity = 0;
+		for (let i = 0; i < childforms.length; i++) {
+			console.log(childforms[i].cycle_end);
+
+			//validation
+			if (childforms[i].cycle_start >= childforms[i].cycle_end) {
+				frappe.msgprint(__('Cycle End Date cannot be before the Cycle Start Date'));
+				frappe.validated = false;
+				return;
+			} else {
+
+				totalGratuity = totalGratuity + childforms[i].gratuity; //calculate total gratuity
+
+				//check for the last cycle 
+				if (latestCycle.cycle_end < childforms[i].cycle_end) {
+					latestCycle = childforms[i];
+				}
+			}
+			
+
+		}
+		//set variables from the last cycle on the parent form
+		frm.set_value("current_cycle_start", latestCycle.cycle_start);
+		frm.set_value("current_cycle_end", latestCycle.cycle_end);
+		frm.set_value("current_variable",  latestCycle.promised_variable_bonus);
+		frm.set_value("current_ctc", latestCycle.promised_total);
+		frm.set_value("total_gratuity", totalGratuity);
+
+	}
+
+});
+
 frappe.ui.form.on("YearlyCTC", "cycle_start",
 	function (doc, cdt, cdn) {
 		//var item = frappe.get_doc(cdt, cdn);
@@ -39,10 +78,12 @@ frappe.ui.form.on("YearlyCTC", "cycle_start",
 	});
 
 frappe.ui.form.on('YearlyCTC', {
-	commitments_add: function (doc, cdt, cdn) {
+	commitments_add: function (frm, cdt, cdn) {
 		var childfields = locals[cdt][cdn];
-		// You code here
-		console.log(doc.cycle_end);
+		var d = new Date(frm.doc.current_cycle_end);
+		d.setDate(d.getDate() + 1);
+		childfields.cycle_start = d;
+		cur_frm.refresh_field("commitments");
 		console.log("New Row Added");
 	},
 	promised_monthly: function (doc, cdt, cdn) {
@@ -110,6 +151,7 @@ function updatePromisedTotal(doc, cdt, cdn) {
 		childfields.promised_total = total;
 		cur_frm.refresh_field("commitments");
 		console.log('Total Promised:' + total);
+		updateIncrementPercent(doc, cdt, cdn);
 		/* frappe.db.get_value('Employee Variable', { employee: frm.doc.employee }, ['name', 'promised_total'])
 			.then(r => {
 
@@ -127,6 +169,36 @@ function updatePromisedTotal(doc, cdt, cdn) {
 				}
 			}) */
 	}
+}
+
+function updateIncrementPercent(doc, cdt, cdn) {
+	var childfields = locals[cdt][cdn];
+	var childforms = doc.doc.commitments; //get all other child rows
+
+	if (childforms.length > 1) //Only calculate if there are more than one rows
+	{
+		var d = new Date(childfields.cycle_start);
+		d.setDate(d.getDate() - 1); //previous cycle end date
+		for (let index = 0; index < childforms.length; index++) {
+			const element = childforms[index];
+			var endDate = new Date(element.cycle_end)		
+			if (endDate.getTime() == d.getTime()) // found match for previous cycle
+			{
+
+				if (element.promised_total > 0) {
+					console.log('Previous CTC' + element.promised_total);
+					let increment_amount = childfields.promised_total - element.promised_total;
+					let increment = (increment_amount / element.promised_total) * 100;
+					childfields.increment_percent = increment;
+					cur_frm.refresh_field("commitments");
+				}
+				break;
+			}
+			
+		}
+	}
+
+
 }
 
 function updateActualPaidTotal(doc, cdt, cdn) {
