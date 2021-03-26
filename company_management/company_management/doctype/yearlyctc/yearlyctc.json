@@ -34,14 +34,16 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Cycle Start"
+   "label": "Cycle Start",
+   "reqd": 1
   },
   {
    "fieldname": "cycle_end",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Cycle End"
+   "label": "Cycle End",
+   "reqd": 1
   },
   {
    "fieldname": "promised_compensation_section",
@@ -49,22 +51,30 @@
    "label": "Promised Compensation"
   },
   {
+   "default": "0",
    "fieldname": "promised_monthly",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Promised Monthly"
+   "label": "Promised Monthly",
+   "non_negative": 1,
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "promised_fixed_bonus",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Promised Fixed Bonus"
+   "label": "Promised Fixed Bonus",
+   "non_negative": 1,
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "promised_total",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Promised Total"
+   "label": "Promised Total",
+   "precision": "2"
   },
   {
    "fieldname": "column_break_9",
@@ -87,31 +97,41 @@
    "label": "Actual Compensation"
   },
   {
+   "default": "0",
    "fieldname": "actual_fixed_bonus",
    "fieldtype": "Currency",
-   "label": "Actual Fixed Bonus"
+   "label": "Actual Fixed Bonus",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "actual_variable_bonus",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Actual Variable Bonus"
+   "label": "Actual Variable Bonus",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "epfo_paid",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "EPFO Paid"
+   "label": "EPFO Paid",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "holiday_days",
    "fieldtype": "Float",
-   "label": "Holiday Days"
+   "label": "Holiday Days",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "holidays",
    "fieldtype": "Currency",
-   "label": "Holidays"
+   "label": "Holidays",
+   "precision": "2"
   },
   {
    "fieldname": "gratuity",
@@ -120,10 +140,12 @@
    "label": "Gratuity"
   },
   {
+   "default": "0",
    "fieldname": "total_actual",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Actual"
+   "label": "Total Actual",
+   "precision": "2"
   },
   {
    "fieldname": "column_break_22",
@@ -140,26 +162,32 @@
    "label": "Review Comments"
   },
   {
+   "default": "0",
    "fieldname": "promised_variable_bonus",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Promised Variable Bonus"
+   "label": "Promised Variable Bonus",
+   "non_negative": 1,
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "increment_percent",
    "fieldtype": "Percent",
-   "label": "Increment %"
+   "label": "Increment %",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "actual_variable_bonus_percent",
    "fieldtype": "Percent",
-   "label": "Actual Variable Bonus %"
+   "label": "Actual Variable Bonus %",
+   "precision": "2"
   }
  ],
- "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-03-25 18:07:22.546002",
+ "modified": "2021-03-26 14:47:14.485446",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "YearlyCTC",

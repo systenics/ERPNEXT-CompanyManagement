@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
+ "autoname": "field:employee",
  "creation": "2020-11-30 17:36:51.573546",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -23,7 +24,9 @@
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "full_name",
@@ -86,9 +89,8 @@
    "label": "Current Increment %"
   }
  ],
- "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-25 18:05:58.455071",
+ "modified": "2021-03-26 14:39:31.285157",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Compensation",
@@ -103,6 +105,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Company Manager",
    "share": 1,
    "write": 1
   }
