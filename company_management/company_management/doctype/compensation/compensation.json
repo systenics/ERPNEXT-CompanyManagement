@@ -44,39 +44,50 @@
   },
   {
    "fieldname": "current_cycle_start",
-   "fieldtype": "Read Only",
+   "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Current Cycle Start"
+   "label": "Current Cycle Start",
+   "read_only": 1
   },
   {
    "fieldname": "current_cycle_end",
-   "fieldtype": "Read Only",
+   "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Current Cycle End"
+   "label": "Current Cycle End",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "current_ctc",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Current CTC"
+   "label": "Current CTC",
+   "precision": "2",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "current_variable",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Current Variable"
+   "label": "Current Variable",
+   "precision": "2",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_gratuity",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Gratuity"
+   "label": "Total Gratuity",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "compensation_section",
@@ -84,13 +95,17 @@
    "label": "Compensation"
   },
   {
+   "default": "0",
    "fieldname": "current_increment_precent",
-   "fieldtype": "Read Only",
-   "label": "Current Increment %"
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Current Increment %",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2021-03-26 14:39:31.285157",
+ "modified": "2021-03-26 16:51:37.670610",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Compensation",

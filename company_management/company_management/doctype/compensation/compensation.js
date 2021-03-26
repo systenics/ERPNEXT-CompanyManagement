@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 cur_frm.add_fetch('employee', 'employee_name', 'full_name');
-console.log("Update 4");
+//console.log("Update 4");
 
 
 /* frappe.ui.form.on('YearlyCTC', {
