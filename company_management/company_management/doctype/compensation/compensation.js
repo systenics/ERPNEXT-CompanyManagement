@@ -224,7 +224,7 @@ function updateActualVariable(doc, cdt, cdn) {
 
 function updateActualPercentage(doc, cdt, cdn) {
 	var childfields = locals[cdt][cdn];
-	var per = (childfields.promised_variable_bonus * 100) / childfields.actual_variable_bonus;
+	var per = (childfields.actual_variable_bonus * 100) / childfields.promised_variable_bonus;
 	childfields.actual_variable_bonus_percent = per;
 	cur_frm.refresh_field("commitments");
 	console.log('Actual Variable Bonus %: ' + per);
