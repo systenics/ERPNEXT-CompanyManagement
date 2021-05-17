@@ -31,6 +31,8 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+treeviews = [ 'Appraisal Assessment Group']
+
 # Home Pages
 # ----------
 
@@ -127,5 +129,11 @@ app_license = "MIT"
 # 	"Task": "company_management.task.get_dashboard_data"
 # }
 
+fixtures = [
+    # export all records from the Category table
+    #"Category",
+    # export only those records that match the filters from the Role table
+    {"dt":"Workspace", "filters": [["name","in", ("Projects")]]},
+]
 
 

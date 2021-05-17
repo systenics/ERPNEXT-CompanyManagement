@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:grading_scale_name",
- "creation": "2021-05-13 18:52:24.469121",
+ "creation": "2021-05-14 16:16:12.067562",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -51,13 +51,14 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-05-13 18:52:24.469121",
+ "modified": "2021-05-14 16:16:12.067562",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Appraisal Grading Scale",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
    "cancel": 1,
    "create": 1,
    "delete": 1,
@@ -66,14 +67,13 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Academics User",
+   "role": "System Manager",
    "share": 1,
    "submit": 1,
    "write": 1
   }
  ],
  "quick_entry": 1,
- "restrict_to_domain": "Education",
  "sort_field": "modified",
  "sort_order": "DESC"
 }
