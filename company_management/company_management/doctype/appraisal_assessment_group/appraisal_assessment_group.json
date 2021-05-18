@@ -64,17 +64,17 @@
    "options": "Appraisal Assessment Group"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "parent_appraisal_assessment_group",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Parent Appraisal Assessment Group",
-   "options": "Appraisal Assessment Group",
-   "reqd": 1
+   "options": "Appraisal Assessment Group"
   }
  ],
  "is_tree": 1,
  "links": [],
- "modified": "2021-05-17 16:38:32.841888",
+ "modified": "2021-05-17 18:45:14.558282",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Appraisal Assessment Group",
