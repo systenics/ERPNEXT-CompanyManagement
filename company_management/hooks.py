@@ -133,7 +133,7 @@ fixtures = [
     # export all records from the Category table
     #"Category",
     # export only those records that match the filters from the Role table
-    {"dt":"Workspace", "filters": [["name","in", ("Projects")]]},
+    {"dt":"Workspace", "filters": [["name","in", ("HR")]]},
 ]
 
 

@@ -2,26 +2,26 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:assessment_group_name",
- "creation": "2021-05-17 16:37:21.097422",
+ "autoname": "field:appraisal_assessment_group_name",
+ "creation": "2021-05-18 14:32:32.200154",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "assessment_group_name",
+  "appraisal_assessment_group_name",
   "is_group",
-  "section_break_3",
+  "section_break_2",
+  "parent_appraisal_assessment_group",
   "lft",
   "rgt",
-  "old_parent",
-  "parent_appraisal_assessment_group"
+  "old_parent"
  ],
  "fields": [
   {
-   "fieldname": "assessment_group_name",
+   "fieldname": "appraisal_assessment_group_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Assessment Group Name",
+   "label": "Apparisal Assessment Group Name",
    "reqd": 1,
    "unique": 1
   },
@@ -32,49 +32,39 @@
    "label": "Is Group"
   },
   {
-   "fieldname": "section_break_3",
-   "fieldtype": "Section Break"
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "parent_appraisal_assessment_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Parent Assessment Group",
+   "options": "Appraisal Assessment Group",
+   "reqd": 1
   },
   {
    "fieldname": "lft",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Left",
-   "no_copy": 1,
-   "read_only": 1
+   "label": "lft"
   },
   {
    "fieldname": "rgt",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Right",
-   "no_copy": 1,
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "is_group",
-   "fieldtype": "Check",
-   "label": "Is Group"
+   "label": "rgt"
   },
   {
    "fieldname": "old_parent",
    "fieldtype": "Link",
-   "label": "Old Parent",
-   "options": "Appraisal Assessment Group"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "parent_appraisal_assessment_group",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Parent Appraisal Assessment Group",
+   "ignore_user_permissions": 1,
+   "label": "old_parent",
    "options": "Appraisal Assessment Group"
   }
  ],
  "is_tree": 1,
  "links": [],
- "modified": "2021-05-17 18:45:14.558282",
+ "modified": "2021-05-18 14:32:32.200154",
  "modified_by": "Administrator",
  "module": "Company Management",
  "name": "Appraisal Assessment Group",

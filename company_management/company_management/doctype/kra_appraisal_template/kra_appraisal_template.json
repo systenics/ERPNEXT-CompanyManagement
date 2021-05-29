@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "autoname": "field:title",
+ "creation": "2021-05-21 16:23:41.825315",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "description",
+  "is_active",
+  "monthly_kra_section",
+  "maximum_monthly_score",
+  "monthly_kra_group",
+  "monthly_kra",
+  "quarterly_kra_section",
+  "maximum_quarterly_score",
+  "quarterly_kra_group",
+  "quarterly_kra",
+  "yearly_kra_section",
+  "yearly_maximum_score",
+  "yearly_kra_group",
+  "yearly_kra",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "monthly_kra_section",
+   "fieldtype": "Section Break",
+   "label": "Monthly KRA"
+  },
+  {
+   "fieldname": "yearly_kra_section",
+   "fieldtype": "Section Break",
+   "label": "Yearly KRA"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KRA Appraisal Template",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Maximum Monthly Score (will be divided equally for each month)",
+   "fieldname": "maximum_monthly_score",
+   "fieldtype": "Float",
+   "label": "Maximum Monthly Score",
+   "precision": "2"
+  },
+  {
+   "fieldname": "monthly_kra",
+   "fieldtype": "Table",
+   "label": "KRA's",
+   "options": "KRA Appraisal Template Item"
+  },
+  {
+   "fieldname": "monthly_kra_group",
+   "fieldtype": "Link",
+   "label": "KRA Group",
+   "options": "KRA Group"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "yearly_maximum_score",
+   "fieldtype": "Float",
+   "label": "Yearly Maximum Score",
+   "precision": "2"
+  },
+  {
+   "fieldname": "yearly_kra_group",
+   "fieldtype": "Link",
+   "label": "Yearly KRA Group",
+   "options": "KRA Group"
+  },
+  {
+   "fieldname": "yearly_kra",
+   "fieldtype": "Table",
+   "label": "Yearly KRA's",
+   "options": "KRA Appraisal Template Item"
+  },
+  {
+   "fieldname": "quarterly_kra_section",
+   "fieldtype": "Section Break",
+   "label": "Quarterly KRA"
+  },
+  {
+   "default": "0.00",
+   "description": "Maximum Quarter Score (will be divided equally for each Quarter)",
+   "fieldname": "maximum_quarterly_score",
+   "fieldtype": "Float",
+   "label": "Maximum Quarterly Score",
+   "precision": "2"
+  },
+  {
+   "fieldname": "quarterly_kra_group",
+   "fieldtype": "Link",
+   "label": "Quarterly KRA Group",
+   "options": "KRA Group"
+  },
+  {
+   "fieldname": "quarterly_kra",
+   "fieldtype": "Table",
+   "label": "Quarterly KRA's",
+   "options": "KRA Appraisal Template Item"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-05-21 16:49:04.395199",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "KRA Appraisal Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "title",
+ "track_changes": 1
+}
