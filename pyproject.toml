@@ -1,5 +1,5 @@
 [project]
-name = "companymanagement"
+name = "company_management"
 version = "1.0.15"
 description = "company managemnt"
 requires-python = ">=3.10"
